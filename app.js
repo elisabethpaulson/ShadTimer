@@ -134,11 +134,13 @@ function startClock(startTime) {
 
         if (elapsed < 0) {
             // Display start time if the elapsed time is negative
-            clockElement.textContent = `This run starts at ${startTime}`;
+            titleElement.textContent = `This run starts at ${startTime}`;
             intervalTimerElement.style.display = "none";
             intervalCounterElement.style.display = "none";
             messageElement.style.display = "none";
-            titleElement.textContent = "";
+            timeInSetupElement.style.display = "none";
+            timeInPauseElement.style.display = "none";
+            timeInDemoElement.style.display = "none";
             document.body.style.backgroundColor = "#f0f0f0";
             return;
         }
@@ -171,7 +173,7 @@ function startClock(startTime) {
 
             if (intervalElapsed < 60) {
                 const countdownSeconds = 60 - intervalElapsed;
-                document.body.style.backgroundColor = "green";
+                document.body.style.backgroundColor = "#90EE90"; // Lighter green shade
                 messageElement.textContent = `Place orders now. ${countdownSeconds} seconds left to place orders.`;
             } else if (intervalElapsed >= 120) {
                 const countdownSeconds = 60 - (intervalElapsed - 120);
@@ -230,7 +232,7 @@ function startClock(startTime) {
 
             if (intervalElapsed < 60) {
                 const countdownSeconds = 60 - intervalElapsed;
-                document.body.style.backgroundColor = "green";
+                document.body.style.backgroundColor = "#90EE90"; // Lighter green shade
                 messageElement.textContent = `Place orders now. ${countdownSeconds} seconds left to place orders.`;
             } else if (intervalElapsed >= 120) {
                 const countdownSeconds = 60 - (intervalElapsed - 120);
@@ -245,4 +247,5 @@ function startClock(startTime) {
 
     setInterval(updateTime, 1000);
 }
+
 
