@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #clock, #intervalTimer, #startButton {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #message {
+            font-size: 2em;
+            font-style: italic;
+            margin-top: 50px; /* Added spacing to push the message lower */
+        }
+    </style>
+</head>
+<body>
+
+<div id="setup">
+    <label for="startTime">Enter Start Time (HH:MM):</label>
+    <input type="time" id="startTime" required>
+    <button id="startButton">Start Timer</button>
+</div>
+
+<div id="title"></div>
+<div id="clock">Elapsed Time: 00:00:00</div>
+<div id="intervalTimer">Time Left in 3-Minute Interval: 03:00</div>
+<div id="intervalCounter">Interval Number: 1</div>
+<div id="message"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
+

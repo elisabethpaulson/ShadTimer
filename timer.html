@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shad Exercise Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #clock, #intervalTimer, #startButton, #timeInSetup, #timeInPause, #timeInDemo {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #intervalCounter, #elapsedTime {
+            font-size: 1.5em; /* Smaller size for Interval Number and Elapsed Time */
+            margin-bottom: 10px;
+        }
+        #elapsedTime {
+            margin-top: -10px; /* Adjust margin to position below Interval Number */
+        }
+        #message {
+            font-size: 2em;
+            font-style: italic;
+            margin-top: 50px;
+        }
+        #title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-top: 50px; /* Added margin to push down the main content */
+        }
+        #countdown {
+            font-size: 3em;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+        .side-panel {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .side-panel a {
+            font-size: 1.2em;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #000;
+            padding: 5px;
+        }
+        .side-panel a:hover {
+            background-color: #d3d3d3; /* Darker grey on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="side-panel">
+        <a href="index.html">Home</a>
+        <a href="timer.html?team=odd1">Odd Team Run 1</a>
+        <a href="timer.html?team=even1">Even Team Run 1</a>
+        <a href="timer.html?team=odd2">Odd Team Run 2</a>
+        <a href="timer.html?team=even2">Even Team Run 2</a>
+    </div>
+
+    <div id="countdown"></div>
+    <div id="title"></div>
+    <div id="timeInSetup">Time in Set-up: 00:00</div>
+    <div id="timeInPause" style="display:none;">Time in Pause: 00:00</div>
+    <div id="timeInDemo" style="display:none;">Time in Demo: 00:00</div>
+    <div id="intervalTimer">Time Left in 3-Minute Interval: 03:00</div>
+    <div id="intervalCounter">Interval Number: 1</div>
+    <div id="elapsedTime">Elapsed Time: 00:00:00</div>
+    <div id="message"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>

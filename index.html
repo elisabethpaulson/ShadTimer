@@ -3,44 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Tracker</title>
+    <title>Shad Exercise Timer</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
         }
-        #clock, #intervalTimer, #startButton {
-            font-size: 2em;
-            margin-bottom: 20px;
+        h1 {
+            margin-top: 50px;
+            font-size: 2.5em;
         }
-        #message {
-            font-size: 2em;
-            font-style: italic;
-            margin-top: 50px; /* Added spacing to push the message lower */
+        .start-time {
+            margin: 20px;
+        }
+        label {
+            font-size: 1.5em;
+        }
+        input[type="time"] {
+            font-size: 1.5em;
+        }
+        input[type="password"] {
+            font-size: 1.2em;
+        }
+        .links {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            left: 20px;
+        }
+        .links a {
+            font-size: 1.5em;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #000;
+            padding: 5px;
+        }
+        .links a:hover {
+            background-color: #d3d3d3; /* Darker grey on hover */
         }
     </style>
 </head>
 <body>
 
-<div id="setup">
-    <label for="startTime">Enter Start Time (HH:MM):</label>
-    <input type="time" id="startTime" required>
-    <button id="startButton">Start Timer</button>
-</div>
+    <h1>Shad Exercise Timer</h1>
 
-<div id="title"></div>
-<div id="clock">Elapsed Time: 00:00:00</div>
-<div id="intervalTimer">Time Left in 3-Minute Interval: 03:00</div>
-<div id="intervalCounter">Interval Number: 1</div>
-<div id="message"></div>
+    <div class="start-time">
+        <label for="oddTeamRun1">Odd Team Run 1:</label>
+        <input type="time" id="oddTeamRun1" disabled>
+    </div>
 
-<script src="app.js"></script>
+    <div class="start-time">
+        <label for="evenTeamRun1">Even Team Run 1:</label>
+        <input type="time" id="evenTeamRun1" disabled>
+    </div>
+
+    <div class="start-time">
+        <label for="oddTeamRun2">Odd Team Run 2:</label>
+        <input type="time" id="oddTeamRun2" disabled>
+    </div>
+
+    <div class="start-time">
+        <label for="evenTeamRun2">Even Team Run 2:</label>
+        <input type="time" id="evenTeamRun2" disabled>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <input type="password" id="password" placeholder="Enter password to edit">
+        <button onclick="editAllTimes()">Unlock Editing</button>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <button onclick="confirmTimes()">Enter</button>
+    </div>
+
+    <div class="links">
+        <a href="timer.html?team=odd1">Odd Team Run 1</a>
+        <a href="timer.html?team=even1">Even Team Run 1</a>
+        <a href="timer.html?team=odd2">Odd Team Run 2</a>
+        <a href="timer.html?team=even2">Even Team Run 2</a>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
-
